@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>لوحة إدخال البيانات</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px;
+      font-size: 32px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #1db954, #17a74a);
+      color: #fff;
+      animation: slideDown 1s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1db954;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); color: #17a74a; }
+      100% { transform: scale(1); }
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    input {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 10px #1db954;
+      transform: scale(1.05);
+    }
+
+    button {
+      padding: 14px;
+      background: linear-gradient(90deg, #1db954, #17a74a);
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      transition: 0.3s;
+      animation: bounce 2s infinite;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #17a74a, #1db954);
+      transform: scale(1.1);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 20px;
+      animation: fadeInUp 1.5s ease-in;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .link a {
+      color: #1db954;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .link a:hover {
+      text-decoration: underline;
+      color: #17a74a;
+    }
+  </style>
+</head>
+<body>
+  <header>🚀 منصة إدخال البيانات</header>
+  <div class="container">
+    <h1>إضافة مستخدم جديد</h1>
+    <form action="/add-user" method="POST">
+      <label>الاسم:</label>
+      <input type="text" name="name" placeholder="أدخل الاسم" required>
+      
+      <label>كلمة السر:</label>
+      <input type="text" name="role" placeholder="أدخل كلمة السر" required>
+      
+      <button type="submit">➕ إضافة المستخدم</button>
+    </form>
+    <div class="link">
+      <a href="/users">📋 عرض جميع المستخدمين</a>
+    </div>
+  </div>
+</body>
+</html>
